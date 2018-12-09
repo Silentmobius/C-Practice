@@ -1,0 +1,62 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace Practice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            SubEmployee x = new SubEmployee(5, 6);
+            ReadLine();
+            
+        }
+    }
+    class Employee
+    {
+        public Employee()
+        {
+            WriteLine("An employee is born!");
+        }
+        public Employee(int x, int y)
+        {
+            WriteLine("An employee is born with parameters{0} and {1}", x, y);
+        }
+        private double salary; //private data field/attribute/property
+        public int IdNum { get; set; }
+        public double Salary
+        {
+            get
+            {
+                return salary;
+            }
+            set
+            {
+                const double MIN = 15_000;
+                salary = (value < MIN) ? MIN : value;
+            }
+        }
+        public string getGreeting()
+        {
+            string greeting = "Hello.  I am employee #" + IdNum;
+            return greeting;
+        }
+    }
+    class SubEmployee : Employee
+    {
+        public SubEmployee()
+        {
+            WriteLine("This is the derived class with no parameters.");
+        }
+        public SubEmployee(int x, int y)
+        {
+            WriteLine("Hi, this is the derived class with parameters {0} and {1}", x,y);
+        }
+    }
+
+}

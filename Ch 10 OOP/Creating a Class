@@ -1,0 +1,55 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace Practice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Employee x = new Employee();
+            Employee y = new Employee();
+            y.IdNum = 5;
+            x.Salary = 10_000;
+            WriteLine("Salary of x is " + x.Salary);
+            WriteLine("IdNum is " + x.IdNum);
+            WriteLine("IdNum of y is " + y.IdNum);
+            ReadLine();
+
+
+        }
+    }
+    class Employee
+    {
+        private double salary; //private data field/attribute/property
+        public int IdNum { get; set; }
+        public double Salary
+        {
+            get
+            {
+                return salary;
+            }
+            set
+            {
+                const double MIN = 15_000;
+                salary = (value < MIN) ? MIN : value;
+            }
+        }
+        public string getGreeting()
+        {
+            string greeting = "Hello.  I am employee #" + IdNum;
+            return greeting;
+
+        }
+
+
+
+
+    }
+
+}

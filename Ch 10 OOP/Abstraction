@@ -1,0 +1,44 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace Practice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dog x = new Dog("Large", "Red");
+            
+            WriteLine("Size: {0}\nColor: {1}\nSpeak: {2}", x.size, x.color, x.Speak());
+
+            ReadLine();
+          
+        }
+    }
+    abstract class Animal
+    {
+        public string size { get; set; }
+        public string color { get; set; }
+        public Animal(String newSize, String newColor)
+        {
+            this.size = newSize;
+            this.color = newColor;
+        }
+        public abstract string Speak();
+
+    }
+    class Dog : Animal
+    {
+        public Dog(String x, String y) : base(x, y) { }
+        public override string Speak()
+        {
+            return "Bark!";
+        }
+    }
+
+}

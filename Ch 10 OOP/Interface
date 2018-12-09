@@ -1,0 +1,32 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace Practice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Betty x = new Betty();
+            Write(x.Work());
+            ReadLine();
+          
+        }
+    }
+
+    public interface IRobotable //Names start with I. ends with able
+    {
+        string Work();
+    }
+    class Betty : IRobotable
+    {
+        public string Work() //Method MUST be used as this class is a child of the interface
+        {
+            return "I work as robot Betty.";
+        }
+    }

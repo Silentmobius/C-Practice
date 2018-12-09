@@ -1,0 +1,46 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Console;
+
+namespace Practice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            GreetingOverride x = new GreetingOverride("Red", "Blue");
+            otherGreeting y = new otherGreeting();
+            ReadLine();
+
+            //Greetings Red and Blue!
+            //Greetings Black and Yellow!
+
+        }
+    }
+    class Greeting
+    {
+        public Greeting(string x, string y)
+        {
+            WriteLine("Greetings {0} and {1}!", x, y);
+        }
+    }
+    class GreetingOverride : Greeting
+    {
+        public GreetingOverride(String x, String y) : base(x, y)
+        {
+
+        }
+    }
+    class otherGreeting : Greeting
+    {
+        public otherGreeting() : base("Black", "Yellow")
+        {
+
+        }
+    }
+}

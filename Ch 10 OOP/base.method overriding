@@ -1,0 +1,29 @@
+using static System.Console;
+
+namespace Practice
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            GreetingOverride x = new GreetingOverride();
+            WriteLine(x.getGreeting());
+            ReadLine();
+
+        }
+    }
+    class Greeting
+    {
+        public string getGreeting()
+        {
+            return "Hello World!";
+        }
+    }
+    class GreetingOverride : Greeting
+    {
+        public string getGreeting()
+        {
+            return base.getGreeting() + " This is overriding a method.";
+        }
+    }
+}
